@@ -24,5 +24,16 @@ namespace ProjektSemestralny
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            ProjektSemestralny.HotelDataSet hotelDataSet = ((ProjektSemestralny.HotelDataSet)(this.FindResource("hotelDataSet")));
+            // Załaduj dane do tabeli Klienci. Możesz modyfikować ten kod w razie potrzeby.
+            ProjektSemestralny.HotelDataSetTableAdapters.KlienciTableAdapter hotelDataSetKlienciTableAdapter = new ProjektSemestralny.HotelDataSetTableAdapters.KlienciTableAdapter();
+            hotelDataSetKlienciTableAdapter.Fill(hotelDataSet.Klienci);
+            System.Windows.Data.CollectionViewSource klienciViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("klienciViewSource")));
+            klienciViewSource.View.MoveCurrentToFirst();
+        }
     }
 }
