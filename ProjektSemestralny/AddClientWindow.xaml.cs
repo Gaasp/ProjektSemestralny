@@ -26,7 +26,12 @@ namespace ProjektSemestralny
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Klienci klienci = new Klienci();
+            klienci.imie = NameTextBox.Text.ToString();
+            klienci.nazwisko = LastNameTextBox.Text.ToString();
+            klienci.pesel = float.Parse(peselTextBox.Text);
+            klienci.telefon = float.Parse(phoneTextBox.Text);
+            
         }
     }
 }

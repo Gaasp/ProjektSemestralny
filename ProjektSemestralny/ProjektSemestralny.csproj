@@ -73,6 +73,8 @@
     <Compile Include="AddPersonelWindow.xaml.cs">
       <DependentUpon>AddPersonelWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ClientsBase.cs" />
+    <Compile Include="ClientsView.cs" />
     <Compile Include="HomeWindow.xaml.cs">
       <DependentUpon>HomeWindow.xaml</DependentUpon>
     </Compile>

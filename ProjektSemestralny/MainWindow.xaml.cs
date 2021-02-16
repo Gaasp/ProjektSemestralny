@@ -20,9 +20,11 @@ namespace ProjektSemestralny
     /// </summary>
     public partial class MainWindow : Window
     {
+        ClientsView ClientsD;
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -34,6 +36,16 @@ namespace ProjektSemestralny
             hotelDataSetKlienciTableAdapter.Fill(hotelDataSet.Klienci);
             System.Windows.Data.CollectionViewSource klienciViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("klienciViewSource")));
             klienciViewSource.View.MoveCurrentToFirst();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(boxx.Text=="")
+            {
+                
+            }
+            dataGrid.DataContext = ClientsD.searchBase(boxx.Text);
+            dataGrid.Columns[0].Visibility = Visibility.Hidden;
         }
     }
 }
