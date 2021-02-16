@@ -10,8 +10,5 @@
         <local:HotelDataSet x:Key="hotelDataSet"/>
         <CollectionViewSource x:Key="klienciViewSource" Source="{Binding Klienci, Source={StaticResource hotelDataSet}}"/>
     </Window.Resources>
-    <Grid DataContext="{StaticResource klienciViewSource}">
-        <DataGrid HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" ItemsSource="{Binding}"/>
-
-    </Grid>
+    <Grid DataContext="{StaticResource klienciViewSource}"/>
 </Window>
