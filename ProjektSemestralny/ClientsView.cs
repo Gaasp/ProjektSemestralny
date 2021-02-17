@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace ProjektSemestralny
 {
-    class ClientsView
+    public class ClientsView
     {
        public ObservableCollection<Klienci> kliencis { get; set; }
         private ClientsBase clientsBase { get; set; }
@@ -13,19 +13,30 @@ namespace ProjektSemestralny
         public ClientsView()
         {
             clientsBase = new ClientsBase();
-            kliencis = new ObservableCollection<Klienci>(clientsBase.kliencis);
+            kliencis = new ObservableCollection<Klienci>(clientsBase.klienciBase);
             kliencis.CollectionChanged += Klienci_CollectionChanged;
         }
 
-        public List<Klienci> searchBase(string searchQuery)
+        /*
+      * Function: Search for the query string in Movies Collection
+      * Saves time and resources by searching in Collection in memory
+      * rather than in database
+      */
+        public List<Klienci> searchRepo(string searchQuery)
         {
             if(searchQuery =="*"||searchQuery==" ")
                 throw new Exception("Warning: Symbols such as '*' or whitespace are not acceptable");
-            List<Klienci> KliencList = (from tempKlienci in kliencis
+
+            List<Klienci> KlienciList = 
+                (from tempKlienci in kliencis
                                         where tempKlienci.imie.Contains(searchQuery)
                                         select tempKlienci).ToList();
-            return KliencList;
+            return KlienciList;
         }
+
+        /*
+       * Function: Add Record to Collection and Database
+       */
         public void AddRecordToRepo(Klienci klienci)
         {
             if (klienci == null)
@@ -73,12 +84,18 @@ namespace ProjektSemestralny
                 index++;
             }
         }
+
+        /*
+       * Event Handler: Handles the CollectionChanged event of ObservableCollection
+       * Updates the Database if any change is made to the Movies Collection
+       * Thus removes unncecessary burden of accessing Database
+       */
         private void Klienci_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
             {
                 int newIndex = e.NewStartingIndex;
-               // clientsBase.addNewRecord(kliencis[newIndex]);
+               clientsBase.addNewRecord(kliencis[newIndex]);
             }
             else if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
             {

@@ -74,6 +74,9 @@
       <DependentUpon>AddPersonelWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ClientsBase.cs" />
+    <Compile Include="ClientsSearchWindow.xaml.cs">
+      <DependentUpon>ClientsSearchWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ClientsView.cs" />
     <Compile Include="HomeWindow.xaml.cs">
       <DependentUpon>HomeWindow.xaml</DependentUpon>
@@ -90,6 +93,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddPersonelWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClientsSearchWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

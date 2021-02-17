@@ -29,7 +29,7 @@ namespace ProjektSemestralny
             Klienci klienci = new Klienci();
             klienci.imie = NameTextBox.Text.ToString();
             klienci.nazwisko = LastNameTextBox.Text.ToString();
-            klienci.pesel = float.Parse(peselTextBox.Text);
+            klienci.pesel = int.Parse(peselTextBox.Text);
             klienci.telefon = float.Parse(phoneTextBox.Text);
             
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjektSemestralny
 {
-    class Klienci
+   public class Klienci
     {
         public int id_Klienta { get; set; }
         public string imie { get; set; }
