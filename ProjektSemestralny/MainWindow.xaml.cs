@@ -51,5 +51,16 @@ namespace ProjektSemestralny
             PersonelSearchWindow personelSearchWindow = new PersonelSearchWindow();
             personelSearchWindow.Show();
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            reservationWindow reservationWindow = new reservationWindow();
+            reservationWindow.Show();
+        }
     }
 }

@@ -16,26 +16,36 @@ using System.Data.SqlClient;
 namespace ProjektSemestralny
 {
     /// <summary>
-    /// Logika interakcji dla klasy PersonelSearchWindow.xaml
+    /// Logika interakcji dla klasy reservationWindow.xaml
     /// </summary>
-    public partial class PersonelSearchWindow : Window
+    public partial class reservationWindow : Window
     {
-        public PersonelSearchWindow()
+        public reservationWindow()
         {
             InitializeComponent();
         }
-        DataTable dt = new DataTable("Personel");
-        private void searchButton_Click(object sender, RoutedEventArgs e)
+        DataTable dt = new DataTable("Rezerwacje");
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             SqlConnection connection = new SqlConnection(Properties.Settings.Default.HotelConnectionString);
             try
             {
                 connection.Open();
-                string query = "SELECT imie,nazwisko,stanowisko,telefon FROM Personel";
+                string query = "SELECT id_rezerwacji,id_klienta,data_rezerwacji,id_pokoju FROM Rezerwacje";
                 SqlCommand createCommand = new SqlCommand(query, connection);
                 createCommand.ExecuteNonQuery();
 
-                using (SqlDataAdapter dataApp = new SqlDataAdapter("SELECT * FROM Personel", connection))
+                using (SqlDataAdapter dataApp = new SqlDataAdapter("SELECT * FROM Rezerwacje", connection))
                 {
 
                     dataApp.Fill(dt);
@@ -48,7 +58,14 @@ namespace ProjektSemestralny
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void search_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            DataView dataView = new DataView(dt);
+            dataView.RowFilter = "Convert(id_pokoju, 'System.String') LIKE '" + search_TextBox.Text + "%'";
+            dataGrid.ItemsSource = dataView;
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

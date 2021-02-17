@@ -35,6 +35,7 @@ namespace ProjektSemestralny
             this.Loaded += SearchPage_Loaded;
             EditBtn.IsEnabled = false;
             DelBtn.IsEnabled = false;
+            searchBox.IsEnabled = false;
         }
 
         private void SearchPage_Loaded(object sender, RoutedEventArgs e)
@@ -80,21 +81,10 @@ namespace ProjektSemestralny
                 MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-
-            if (gridTable.SelectedCells.Count == 0)         // Disanle the Edit and Delete Button if no row selected
-            {
-                EditBtn.IsEnabled = false;
-                DelBtn.IsEnabled = false;
-            }
-            else
-            {
-                EditBtn.IsEnabled = true;
-                DelBtn.IsEnabled = true;
-            }
-            //gridTable.DataContext = ClientsV.searchRepo(searchBox.Text);
-            // WarningSearchLabel.Visibility = Visibility.Hidden;
-            //  gridTable.DataContext = ClientsV.searchRepo(searchBox.Text);
-            //gridTable.Columns[0].Visibility = Visibility.Hidden;
+            searchBox.IsEnabled = true;
+           
+           
+           
         }
         private void dataTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -129,6 +119,11 @@ namespace ProjektSemestralny
             dataView.RowFilter = string.Format("imie LIKE '%{0}%'", searchBox.Text);
             gridTable.ItemsSource = dataView;
            
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -8,9 +8,9 @@ namespace ProjektSemestralny
 {
     class Rezerwacje
     {
-        public int id_rezerwacji { get; set; }
-        public int id_klienta { get; set; }
-        public float data_rezerwacji { get; set; }
-        public int data_pokoju { get; set; }
+        public int Id_rezerwacji { get; set; }
+        public int Id_klienta { get; set; }
+        public float Data_rezerwacji { get; set; }
+        public int Id_pokoju { get; set; }
     }
 }
