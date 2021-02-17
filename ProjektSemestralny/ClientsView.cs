@@ -7,14 +7,14 @@ namespace ProjektSemestralny
 {
     public class ClientsView
     {
-       public ObservableCollection<Klienci> kliencis { get; set; }
-        private ClientsBase clientsBase { get; set; }
+        public ObservableCollection<Klienci> clients { get; set; }
+        private ClientsBase ClientsBase { get; set; }
 
         public ClientsView()
         {
-            clientsBase = new ClientsBase();
-            kliencis = new ObservableCollection<Klienci>(clientsBase.klienciBase);
-            kliencis.CollectionChanged += Klienci_CollectionChanged;
+            ClientsBase = new ClientsBase();
+            clients = new ObservableCollection<Klienci>(ClientsBase.klienciBase);
+            clients.CollectionChanged += Klienci_CollectionChanged;
         }
 
         /*
@@ -24,13 +24,13 @@ namespace ProjektSemestralny
       */
         public List<Klienci> searchRepo(string searchQuery)
         {
-            if(searchQuery =="*"||searchQuery==" ")
+            if (searchQuery == "*" || searchQuery == " ")
                 throw new Exception("Warning: Symbols such as '*' or whitespace are not acceptable");
 
-            List<Klienci> KlienciList = 
-                (from tempKlienci in kliencis
-                                        where tempKlienci.imie.Contains(searchQuery)
-                                        select tempKlienci).ToList();
+            List<Klienci> KlienciList =
+                (from tempKlienci in clients
+                 where tempKlienci.Imie.Contains(searchQuery)
+                 select tempKlienci).ToList();
             return KlienciList;
         }
 
@@ -41,7 +41,7 @@ namespace ProjektSemestralny
         {
             if (klienci == null)
                 throw new ArgumentNullException("Error: The argument is Null");
-            kliencis.Add(klienci);
+            clients.Add(klienci);
         }
 
         /*
@@ -53,11 +53,11 @@ namespace ProjektSemestralny
                 throw new Exception("Record ID must be non-negative");
 
             int index = 0;
-            while (index < kliencis.Count)
+            while (index < clients.Count)
             {
-                if (kliencis[index].id_Klienta == id)
+                if (clients[index].Id_Klienta == id)
                 {
-                    kliencis.RemoveAt(index);
+                    clients.RemoveAt(index);
                     break;
                 }
                 index++;
@@ -70,15 +70,15 @@ namespace ProjektSemestralny
          */
         public void UpdateRecordInRepo(Klienci klienci)
         {
-            if (klienci.id_Klienta < 0)
+            if (klienci.Id_Klienta < 0)
                 throw new Exception("Error: ID cannot be negative");
 
             int index = 0;
-            while (index < kliencis.Count)
+            while (index < clients.Count)
             {
-                if (kliencis[index].id_Klienta == klienci.id_Klienta)
+                if (clients[index].Id_Klienta == klienci.Id_Klienta)
                 {
-                    kliencis[index] = klienci;
+                    clients[index] = klienci;
                     break;
                 }
                 index++;
@@ -95,17 +95,19 @@ namespace ProjektSemestralny
             if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
             {
                 int newIndex = e.NewStartingIndex;
-               clientsBase.addNewRecord(kliencis[newIndex]);
+                ClientsBase.addNewRecord(clients[newIndex]);
             }
             else if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
             {
                 List<Klienci> tempListOfRemovedItems = e.OldItems.OfType<Klienci>().ToList();
+                ClientsBase.DelRecord(tempListOfRemovedItems[0].Id_Klienta);
                 //MovieRepository.DelRecord(tempListOfRemovedItems[0].Id);
             }
             else if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Replace)
             {
                 List<Klienci> tempListOfMovies = e.NewItems.OfType<Klienci>().ToList();
-               // MovieRepository.UpdateRecord(tempListOfMovies[0]);      // As the IDs are unique, only one row will be effected hence first index only
+                ClientsBase.UpdateRecord(tempListOfMovies[0]);
+                // MovieRepository.UpdateRecord(tempListOfMovies[0]);      // As the IDs are unique, only one row will be effected hence first index only
             }
         }
     }

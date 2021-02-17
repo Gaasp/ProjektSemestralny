@@ -21,25 +21,25 @@ namespace ProjektSemestralny
             List<Klienci> listOfClients = new List<Klienci>();
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.HotelConnectionString))
             {
-                if(conn == null)
+                if (conn == null)
                 {
                     throw new Exception("Connection String is Null. Set the value of Connection String in ProjektSemestralny->Properties-?Settings.settings");
                 }
-                SqlCommand query = new SqlCommand("SELECT  * from Klienci", conn);
+                SqlCommand query = new SqlCommand("SELECT * from Klienci", conn);
                 conn.Open();
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query);
                 DataTable dataTable = new DataTable();
                 sqlDataAdapter.Fill(dataTable);
 
-                foreach(DataRow row in dataTable.Rows)
+                foreach (DataRow row in dataTable.Rows)
                 {
                     Klienci k = new Klienci();
-                    k.id_Klienta = (int)row["id_klienta"];
-                    k.imie = row["imie"].ToString();
-                    k.nazwisko = row["nazwisko"].ToString();
-                    k.pesel = float.Parse(row["pesel"].ToString());
-                    k.telefon = float.Parse(row["telefon"].ToString());
-                    k.id_zaplaty = (int)row["id_zaplaty"];
+                    k.Id_Klienta = (int)row["id_Klienta"];
+                    k.Imie = row["imie"].ToString();
+                    k.Nazwisko = row["nazwisko"].ToString();
+                    k.Pesel = float.Parse(row["pesel"].ToString());
+                    k.Telefon = float.Parse(row["telefon"].ToString());
+                    k.Id_zaplaty = (int)row["id_zaplaty"];
 
                     listOfClients.Add(k);
                 }
@@ -70,12 +70,12 @@ namespace ProjektSemestralny
                 foreach (DataRow row in dataTable.Rows)
                 {
                     Klienci k = new Klienci();
-                    k.id_Klienta = (int)row["id_klienta"];
-                    k.imie = row["imie"].ToString();
-                    k.nazwisko = row["nazwisko"].ToString();
-                    k.pesel = float.Parse(row["pesel"].ToString());
-                    k.telefon = float.Parse(row["telefon"].ToString());
-                    k.id_zaplaty = (int)row["id_zaplaty"];
+                    k.Id_Klienta = (int)row["Id_klienta"];
+                    k.Imie = row["Imie"].ToString();
+                    k.Nazwisko = row["Nazwisko"].ToString();
+                    k.Pesel = float.Parse(row["Pesel"].ToString());
+                    k.Telefon = float.Parse(row["Telefon"].ToString());
+                    k.Id_zaplaty = (int)row["Id_zaplaty"];
                     listOfClients.Add(k);
                 }
                 return listOfClients;
@@ -100,10 +100,10 @@ namespace ProjektSemestralny
                 SqlParameter param3 = new SqlParameter("pPesel", SqlDbType.Float);
                 SqlParameter param4 = new SqlParameter("pTelefon", SqlDbType.Float);
 
-                param1.Value = klienci.imie;
-                param2.Value = klienci.nazwisko;
-                param3.Value = klienci.pesel;
-                param4.Value = klienci.telefon;
+                param1.Value = klienci.Imie;
+                param2.Value = klienci.Nazwisko;
+                param3.Value = klienci.Pesel;
+                param4.Value = klienci.Telefon;
 
                 query.Parameters.Add(param1);
                 query.Parameters.Add(param2);
@@ -150,11 +150,11 @@ namespace ProjektSemestralny
                 SqlParameter param4 = new SqlParameter("pGenre", SqlDbType.VarChar);
                 SqlParameter param5 = new SqlParameter("pDuration", SqlDbType.Int);
 
-                param1.Value = klienci.id_Klienta;
-                param2.Value = klienci.imie;
-                param3.Value = klienci.nazwisko;
-                param4.Value = klienci.pesel;
-                param5.Value = klienci.telefon;
+                param1.Value = klienci.Id_Klienta;
+                param2.Value = klienci.Imie;
+                param3.Value = klienci.Nazwisko;
+                param4.Value = klienci.Pesel;
+                param5.Value = klienci.Telefon;
 
                 query.Parameters.Add(param1);
                 query.Parameters.Add(param2);

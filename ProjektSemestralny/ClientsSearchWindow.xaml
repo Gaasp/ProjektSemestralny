@@ -17,7 +17,7 @@
             Foreground="WhiteSmoke"
             Background="#13242C"
             
-            Click="Search_Click"/>
+            Click="searchButton_Click"/>
         <DataGrid     x:Name="gridTable"
             AlternatingRowBackground="#576E66"
             HorizontalScrollBarVisibility="Disabled"
