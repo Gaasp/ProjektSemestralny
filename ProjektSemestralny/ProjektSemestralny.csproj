@@ -88,6 +88,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HotelDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PersonelSearchWindow.xaml.cs">
+      <DependentUpon>PersonelSearchWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rezerwacje.cs" />
     <Compile Include="sposob_zaplaty.cs" />
     <Page Include="AddClientWindow.xaml">
@@ -119,6 +122,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PersonelSearchWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Personel.cs" />

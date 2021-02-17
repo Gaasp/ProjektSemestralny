@@ -8,10 +8,10 @@ namespace ProjektSemestralny
 {
     class Personel
     {
-        public int id_personelu { get; set; }
-        public string imie { get; set; }
-        public string nazwisko { get; set; }
-        public string stanowisko { get; set; }
-        public int telefon { get; set; }
+        public int Id_personelu { get; set; }
+        public string Imie { get; set; }
+        public string Nazwisko { get; set; }
+        public string Stanowisko { get; set; }
+        public int Telefon { get; set; }
     }
 }

@@ -11,8 +11,11 @@
         <CollectionViewSource x:Key="klienciViewSource" Source="{Binding Klienci, Source={StaticResource hotelDataSet}}"/>
     </Window.Resources>
     <Grid DataContext="{StaticResource klienciViewSource}">
-        <Frame x:Name="Frame1" Content="Frame" HorizontalAlignment="Left" Height="366" Margin="39,30,0,0" VerticalAlignment="Top" Width="701"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="273,140,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <DataGrid HorizontalAlignment="Left" Height="100" Margin="273,279,0,0" VerticalAlignment="Top" Width="309"/>
+        <Frame x:Name="Frame1" Content="" HorizontalAlignment="Left" Height="366" Margin="61,28,0,0" VerticalAlignment="Top" Width="701"/>
+        <Button x:Name="Search" Content="Szukaj Klienta" HorizontalAlignment="Left" Margin="171,254,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click_1" Height="28"/>
+        <Button x:Name="Add" Content="Dodaj Klienta" HorizontalAlignment="Left" Margin="171,308,0,0" VerticalAlignment="Top" Width="92" Click="Add_Click" Height="28"/>
+        <Label Content="Witamy w bazie danych Hotelu" HorizontalAlignment="Left" Margin="251,58,0,0" VerticalAlignment="Top" Height="44" Width="304" FontSize="20" FontWeight="Bold"/>
+        <Button Content="Dodaj Personel" HorizontalAlignment="Left" Margin="554,308,0,0" VerticalAlignment="Top" Width="92" Height="28" RenderTransformOrigin="0.005,0.463" Click="Button_Click_2"/>
+        <Button Content="Szukaj Pracownika" HorizontalAlignment="Left" Margin="554,254,0,0" VerticalAlignment="Top" Width="92" Height="28" Click="Button_Click_3" RenderTransformOrigin="0.81,-1.521"/>
     </Grid>
 </Window>

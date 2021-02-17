@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Data;
@@ -15,31 +21,31 @@ using System.Data.SqlClient;
 namespace ProjektSemestralny
 {
     /// <summary>
-    /// Logika interakcji dla klasy AddPersonelWindow.xaml
+    /// Logika interakcji dla klasy PersonelSearchWindow.xaml
     /// </summary>
-    public partial class AddPersonelWindow : Window
+    public partial class PersonelSearchWindow : Window
     {
-        public AddPersonelWindow()
+        public PersonelSearchWindow()
         {
             InitializeComponent();
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        DataTable dt = new DataTable("Klienci");
+        private void searchButton_Click(object sender, RoutedEventArgs e)
         {
             SqlConnection connection = new SqlConnection(Properties.Settings.Default.HotelConnectionString);
             try
             {
                 connection.Open();
-                string query = "insert into Personel (imie, nazwisko, stanowisko, telefon) values('" + this.imie_TextBox.Text + "','" + this.nazwisko_TextBox.Text +"','"+this.stanowisko_TextBox1.Text+"','" + this.telefon_TextBox.Text + "')";
+                string query = "SELECT imie,nazwisko,stanowisko,telefon FROM Personel";
                 SqlCommand createCommand = new SqlCommand(query, connection);
                 createCommand.ExecuteNonQuery();
-                MessageBox.Show("Personel został Dodany");
-                connection.Close();
+
+                using (SqlDataAdapter dataApp = new SqlDataAdapter("SELECT * FROM Personel", connection))
+                {
+
+                    dataApp.Fill(dt);
+                    dataGrid.ItemsSource = dt.DefaultView;
+                }
             }
             catch (Exception ex)
             {
