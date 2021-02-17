@@ -19,6 +19,7 @@ namespace ProjektSemestralny
     /// </summary>
     public partial class ClientsSearchWindow : Window
     {
+      
         ClientsView ClientsV;
         Frame Frame;
         public ClientsSearchWindow()
@@ -120,6 +121,14 @@ namespace ProjektSemestralny
         private void e(object sender, KeyEventArgs e)
         {
 
+        }
+
+        private void searchBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            DataView dataView = new DataView(dt);
+            dataView.RowFilter = string.Format("imie LIKE '%{0}%'", searchBox.Text);
+            gridTable.ItemsSource = dataView;
+           
         }
     }
 }

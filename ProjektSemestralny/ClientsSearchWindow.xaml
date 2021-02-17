@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="ClientsSearchWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="searchBox" HorizontalAlignment="Left" Height="23" Margin="342,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="searchBox" HorizontalAlignment="Left" Height="23" Margin="322,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="searchBox_TextChanged_1" RenderTransformOrigin="0.283,-1.924"/>
         <Button x:Name="searchButton" Content="Search"
             HorizontalAlignment="Center"
-            Margin="342,151,350,0"
+            Margin="332,128,360,0"
             VerticalAlignment="Top" 
             Width="100"
             Height="20"
@@ -26,16 +26,16 @@
             IsReadOnly="True"
             ItemsSource="{Binding}"
             HorizontalAlignment="Center"
-            Height="135"
-            Margin="0,200,0,0"
+            Height="206"
+            Margin="10,167,0,0"
             VerticalAlignment="Top"
-            Width="450"
+            Width="782"
             FrozenColumnCount="4"
             SelectionMode="Single"
             SelectionChanged="dataTable_SelectionChanged"/>
-       
-        <Button x:Name="EditBtn" Content="" HorizontalAlignment="Left" Margin="449,357,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="DelBtn" Content="" HorizontalAlignment="Left" Margin="546,357,0,0" VerticalAlignment="Top" Width="75"/>
+
+        <Button x:Name="EditBtn" Content="" HorizontalAlignment="Left" Margin="431,389,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="DelBtn" Content="" HorizontalAlignment="Left" Margin="545,389,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
