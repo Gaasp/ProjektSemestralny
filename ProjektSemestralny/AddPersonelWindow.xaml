@@ -7,17 +7,20 @@
         mc:Ignorable="d"
         Title="AddPersonelWindow" Height="450" Width="800">
     <Grid x:Name="stanowisko_TextBox">
-        <Label Content="Dodaj pracownika&#xD;&#xA;" HorizontalAlignment="Left" Margin="360,23,0,0" VerticalAlignment="Top"/>
-        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="360,335,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.04,0.886" Click="Button_Click"/>
-        <Label Content="Imię&#xD;&#xA;" HorizontalAlignment="Left" Margin="215,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.965,2.169" Height="24"/>
-        <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="203,126,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.537,-0.246"/>
-        <Label Content="Stanowisko&#xD;&#xA;" HorizontalAlignment="Left" Margin="203,173,0,0" VerticalAlignment="Top"/>
-        <Label Content="Telefon&#xD;&#xA;" HorizontalAlignment="Left" Margin="215,216,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.172,0.347" Height="31"/>
-        <TextBox x:Name="imie_TextBox" HorizontalAlignment="Left" Height="23" Margin="379,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="nazwisko_TextBox" HorizontalAlignment="Left" Height="23" Margin="379,129,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="stanowisko_TextBox1" HorizontalAlignment="Left" Height="23" Margin="379,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="telefon_TextBox" HorizontalAlignment="Left" Height="23" Margin="379,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
-        <Button Content="Cofnij" HorizontalAlignment="Left" Margin="33,69,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/background.jpg"/>
+        </Grid.Background>
+        <Label Content="Dodaj pracownika&#xD;&#xA;" HorizontalAlignment="Left" Foreground="White" Margin="360,23,0,0" VerticalAlignment="Top"/>
+        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="370,299,0,0" Background="Gray" Foreground="White" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.04,0.886" Click="Button_Click"/>
+        <Label Content="Imię&#xD;&#xA;" HorizontalAlignment="Left" Margin="215,84,0,0" Foreground="White" VerticalAlignment="Top" RenderTransformOrigin="2.965,2.169" Height="24"/>
+        <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="203,126,0,0" Foreground="White" VerticalAlignment="Top" RenderTransformOrigin="0.537,-0.246"/>
+        <Label Content="Stanowisko&#xD;&#xA;" HorizontalAlignment="Left" Foreground="White" Margin="203,173,0,0" VerticalAlignment="Top"/>
+        <Label Content="Telefon&#xD;&#xA;" HorizontalAlignment="Left" Foreground="White" Margin="215,216,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.172,0.347" Height="31"/>
+        <TextBox x:Name="imie_TextBox" HorizontalAlignment="Left" Height="23" Margin="352,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="nazwisko_TextBox" HorizontalAlignment="Left" Height="23" Margin="352,129,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="stanowisko_TextBox1" HorizontalAlignment="Left" Height="23" Margin="352,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="telefon_TextBox" HorizontalAlignment="Left" Height="23" Margin="352,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <Button Content="Cofnij" HorizontalAlignment="Left" Margin="33,69,0,0" Background="Gray" Foreground="White" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
 
     </Grid>
 </Window>

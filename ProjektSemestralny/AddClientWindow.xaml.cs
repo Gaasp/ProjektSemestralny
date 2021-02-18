@@ -34,13 +34,7 @@ namespace ProjektSemestralny
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //Klienci klienci = new Klienci();
-            //klienci.Imie = imieTextBox.Text.ToString();
-            //klienci.Nazwisko = nazwiskoTextBox.Text.ToString();
-            //klienci.Pesel = int.Parse(peselTextBox.Text);
-            //klienci.Telefon = float.Parse(telefonTextBox.Text);
-
-            //clientsV.AddRecordToRepo(klienci);
+            
             SqlConnection connection = new SqlConnection(Properties.Settings.Default.HotelConnectionString);
             try
             {

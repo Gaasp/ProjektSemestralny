@@ -15,11 +15,12 @@
             <ImageBrush ImageSource="/Assets/background.jpg"/>
         </Grid.Background>
         <Frame x:Name="Frame1" Content="" HorizontalAlignment="Left" Height="366" Margin="61,28,0,0" VerticalAlignment="Top" Width="701"/>
-        <Button x:Name="Search" Content="Szukaj Klienta" HorizontalAlignment="Left" Margin="171,188,0,0" VerticalAlignment="Top" Width="106" Click="Button_Click_1" Height="28"/>
-        <Button x:Name="Add" Content="Dodaj Klienta" HorizontalAlignment="Left" Margin="171,263,0,0" VerticalAlignment="Top" Width="106" Click="Add_Click" Height="28"/>
+        <Button x:Name="Search" Content="Szukaj Klienta" HorizontalAlignment="Left" Foreground="White" Background="Gray" Margin="171,188,0,0" VerticalAlignment="Top" Width="106" Click="Button_Click_1" Height="28"/>
+        <Button x:Name="Add" Content="Dodaj Klienta" HorizontalAlignment="Left" Margin="171,263,0,0" Foreground="White" Background="Gray" VerticalAlignment="Top" Width="106" Click="Add_Click" Height="28"/>
         <Label Content="Witamy w bazie danych Hotelu" Foreground="White" HorizontalAlignment="Left" Margin="251,58,0,0" VerticalAlignment="Top" Height="44" Width="304" FontSize="20" FontWeight="Bold"/>
-        <Button Content="Dodaj Personel" HorizontalAlignment="Left" Margin="554,263,0,0" VerticalAlignment="Top" Width="107" Height="28" RenderTransformOrigin="0.005,0.463" Click="Button_Click_2"/>
-        <Button Content="Szukaj Pracownika" HorizontalAlignment="Left" Margin="554,188,0,0" VerticalAlignment="Top" Width="107" Height="28" Click="Button_Click_3" RenderTransformOrigin="0.81,-1.521"/>
-        <Button Content="Rezerwacje" HorizontalAlignment="Left" Margin="371,263,0,0" VerticalAlignment="Top" Width="92" Height="28" Click="Button_Click_5"/>
+        <Button Content="Dodaj Personel" HorizontalAlignment="Left" Margin="554,263,0,0" Foreground="White" Background="Gray" VerticalAlignment="Top" Width="107" Height="28" RenderTransformOrigin="0.005,0.463" Click="Button_Click_2"/>
+        <Button Content="Szukaj Pracownika" HorizontalAlignment="Left" Foreground="White" Background="Gray" Margin="554,188,0,0" VerticalAlignment="Top" Width="107" Height="28" Click="Button_Click_3" RenderTransformOrigin="0.81,-1.521"/>
+        <Button Content="Rezerwacje" HorizontalAlignment="Left" Margin="371,263,0,0" Foreground="White" Background="Gray" VerticalAlignment="Top" Width="92" Height="28" Click="Button_Click_5"/>
+        <Button x:Name="zamknij" Content="Zamknij" HorizontalAlignment="Left" Foreground="White" Background="Gray" Margin="371,372,0,0" VerticalAlignment="Top" Width="92" Click="zamknij_Click" Height="27"/>
     </Grid>
 </Window>

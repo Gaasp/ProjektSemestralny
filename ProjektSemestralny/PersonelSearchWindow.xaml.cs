@@ -23,6 +23,7 @@ namespace ProjektSemestralny
         public PersonelSearchWindow()
         {
             InitializeComponent();
+            search_TextBox.IsEnabled = false;
         }
         DataTable dt = new DataTable("Personel");
         private void searchButton_Click(object sender, RoutedEventArgs e)
@@ -34,7 +35,7 @@ namespace ProjektSemestralny
                 string query = "SELECT imie,nazwisko,stanowisko,telefon FROM Personel";
                 SqlCommand createCommand = new SqlCommand(query, connection);
                 createCommand.ExecuteNonQuery();
-
+                search_TextBox.IsEnabled = true;
                 using (SqlDataAdapter dataApp = new SqlDataAdapter("SELECT * FROM Personel", connection))
                 {
 
@@ -51,6 +52,13 @@ namespace ProjektSemestralny
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void search_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            DataView dataView = new DataView(dt);
+            dataView.RowFilter = string.Format("imie LIKE '%{0}%'", search_TextBox.Text);
+            dataGrid.ItemsSource = dataView;
         }
     }
 }

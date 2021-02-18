@@ -7,10 +7,13 @@
         mc:Ignorable="d"
         Title="PersonelSearchWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="182" Margin="28,227,0,0" VerticalAlignment="Top" Width="736"/>
-        <Button x:Name="searchButton" Content="Załaduj" HorizontalAlignment="Left" Margin="344,178,0,0" VerticalAlignment="Top" Width="102" Height="31" Click="searchButton_Click"/>
-        <TextBox x:Name="search_TextBox" HorizontalAlignment="Left" Height="39" Margin="331,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="52,65,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/background.jpg"/>
+        </Grid.Background>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="182" Margin="10,227,0,0" VerticalAlignment="Top" Width="772"/>
+        <Button x:Name="searchButton" Content="Załaduj" HorizontalAlignment="Left" Foreground="White" Background="Gray" Margin="344,178,0,0" VerticalAlignment="Top" Width="102" Height="31" Click="searchButton_Click"/>
+        <TextBox x:Name="search_TextBox" HorizontalAlignment="Left" Height="39" Margin="330,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" TextChanged="search_TextBox_TextChanged" IsEnabled="False"/>
+        <Button Content="Cofnij" HorizontalAlignment="Left" Margin="42,43,0,0" Foreground="White" Background="Gray" VerticalAlignment="Top" Width="84" Click="Button_Click" Height="34"/>
 
     </Grid>
 </Window>

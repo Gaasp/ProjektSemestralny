@@ -62,5 +62,10 @@ namespace ProjektSemestralny
             reservationWindow reservationWindow = new reservationWindow();
             reservationWindow.Show();
         }
+
+        private void zamknij_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

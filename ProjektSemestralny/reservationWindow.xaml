@@ -7,9 +7,12 @@
         mc:Ignorable="d"
         Title="reservationWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="189" Margin="125,205,0,0" VerticalAlignment="Top" Width="523"/>
-        <Button x:Name="load_button" Content="Załaduj" HorizontalAlignment="Left" Margin="336,59,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
-        <TextBox x:Name="search_TextBox" HorizontalAlignment="Left" Height="23" Margin="309,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="search_TextBox_TextChanged"/>
-        <Button Content="Cofnij" HorizontalAlignment="Left" Margin="78,64,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/background.jpg"/>
+        </Grid.Background>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="191" Margin="10,207,0,0" VerticalAlignment="Top" Width="772"/>
+        <Button x:Name="load_button" Content="Załaduj" HorizontalAlignment="Left" Foreground="White" Background="Gray" Margin="339,150,0,0" VerticalAlignment="Top" Width="82" Click="Button_Click_2" Height="34"/>
+        <TextBox x:Name="search_TextBox" HorizontalAlignment="Left" Height="38" Margin="319,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="search_TextBox_TextChanged" IsEnabled="False"/>
+        <Button Content="Cofnij" HorizontalAlignment="Left" Margin="36,41,0,0"  Foreground="White" Background="Gray" VerticalAlignment="Top" Width="85" Click="Button_Click_3" Height="33" RenderTransformOrigin="0.321,0.92"/>
     </Grid>
 </Window>

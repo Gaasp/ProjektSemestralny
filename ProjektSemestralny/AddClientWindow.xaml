@@ -7,19 +7,22 @@
         mc:Ignorable="d"
         Title="AddClientWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="361,337,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Label Content="Dodaj Klienta" HorizontalAlignment="Left" Margin="354,23,0,0" VerticalAlignment="Top" Width="82"/>
-        <Label x:Name="imie_label" Content="Imię" HorizontalAlignment="Left" Margin="259,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.789,0.112"/>
-        <TextBox x:Name="imieTextBox" HorizontalAlignment="Left" Height="23" Margin="340,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="nazwisko_label" Content="Nazwisko&#xD;&#xA;" HorizontalAlignment="Left" Margin="244,134,0,0" VerticalAlignment="Top" Width="63" Height="33" RenderTransformOrigin="0.202,0.423"/>
-        <TextBox x:Name="nazwiskoTextBox" HorizontalAlignment="Left" Height="23" Margin="340,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="pesel_label" Content="Pesel" HorizontalAlignment="Left" Margin="255,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.301,0.76"/>
-        <TextBox x:Name="peselTextBox" HorizontalAlignment="Left" Height="23" Margin="340,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.268,0.218"/>
-        <Label x:Name="telefon_label" Content="Telefon" HorizontalAlignment="Left" Margin="255,220,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="telefonTextBox" HorizontalAlignment="Left" Height="23" Margin="340,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="sposob_zaplaty_label" Content="Sposób zapłaty&#xD;&#xA;" HorizontalAlignment="Left" Margin="231,263,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,-0.101"/>
-        <TextBox x:Name="sposob_zaplaty_TextBox" HorizontalAlignment="Left" Height="23" Margin="340,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Cofnij" HorizontalAlignment="Left" Margin="61,79,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/background.jpg"/>
+        </Grid.Background>
+        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="361,337,0,0" Foreground="White" Background="Gray" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Label Content="Dodaj Klienta" HorizontalAlignment="Left" Foreground="White" Margin="354,23,0,0" VerticalAlignment="Top" Width="82"/>
+        <Label x:Name="imie_label" Content="Imię" HorizontalAlignment="Left" Foreground="White" Margin="255,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.789,0.112"/>
+        <TextBox x:Name="imieTextBox" HorizontalAlignment="Left" Height="23" Foreground="White" Margin="340,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="nazwisko_label" Content="Nazwisko&#xD;&#xA;" Foreground="White" HorizontalAlignment="Left" Margin="244,134,0,0" VerticalAlignment="Top" Width="63" Height="33" RenderTransformOrigin="0.202,0.423"/>
+        <TextBox x:Name="nazwiskoTextBox" HorizontalAlignment="Left" Height="23" Foreground="White" Margin="340,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="pesel_label" Content="Pesel" HorizontalAlignment="Left" Foreground="White" Margin="255,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.301,0.76"/>
+        <TextBox x:Name="peselTextBox" HorizontalAlignment="Left" Height="23" Foreground="White" Margin="340,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.268,0.218"/>
+        <Label x:Name="telefon_label" Content="Telefon" HorizontalAlignment="Left" Foreground="White" Margin="244,220,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="telefonTextBox" HorizontalAlignment="Left" Height="23" Foreground="White" Margin="340,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="sposob_zaplaty_label" Content="Sposób zapłaty&#xD;&#xA;" Foreground="White"  HorizontalAlignment="Left" Margin="231,263,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,-0.101"/>
+        <TextBox x:Name="sposob_zaplaty_TextBox" HorizontalAlignment="Left"  Foreground="White" Height="23" Margin="340,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Cofnij" HorizontalAlignment="Left" Foreground="White" Background="Gray" Margin="61,79,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
 
 
 

@@ -25,6 +25,7 @@ namespace ProjektSemestralny
         public ClientsSearchWindow()
         {
             InitializeComponent();
+            searchBox.IsEnabled = false;
         }
         public ClientsSearchWindow(Frame frame, ClientsView clientsV)
         {
@@ -33,9 +34,7 @@ namespace ProjektSemestralny
             this.ClientsV = clientsV;
 
             this.Loaded += SearchPage_Loaded;
-            EditBtn.IsEnabled = false;
-            DelBtn.IsEnabled = false;
-            searchBox.IsEnabled = false;
+            
         }
 
         private void SearchPage_Loaded(object sender, RoutedEventArgs e)
@@ -46,17 +45,6 @@ namespace ProjektSemestralny
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-            if (searchBox.Text == "")
-            {
-                // WarningSearchLabel.Visibility = Visibility.Visible;
-                return;
-            }
-
-            // WarningSearchLabel.Visibility = Visibility.Hidden;
-            //gridTable.DataContext = ClientsV.searchRepo(searchBox.Text);
-            // gridTable.Columns[0].Visibility = Visibility.Hidden;        // Hides the first column i.e. ID
-
-
         }
         DataTable dt = new DataTable("Klienci");
         private void searchButton_Click(object sender, RoutedEventArgs e)
@@ -68,7 +56,7 @@ namespace ProjektSemestralny
                 string query = "SELECT id_Klienta,imie,nazwisko,pesel,telefon FROM Klienci";
                 SqlCommand createCommand = new SqlCommand(query, connection);
                 createCommand.ExecuteNonQuery();
-
+                searchBox.IsEnabled = true;
                 using (SqlDataAdapter dataApp = new SqlDataAdapter("SELECT * FROM Klienci", connection))
                 {
 
@@ -81,21 +69,13 @@ namespace ProjektSemestralny
                 MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            searchBox.IsEnabled = true;
+            
            
            
            
         }
         private void dataTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (gridTable.SelectedCells.Count == 0)
-            {
-                EditBtn.IsEnabled = false;
-                DelBtn.IsEnabled = false;
-                return;
-            }
-            EditBtn.IsEnabled = true;
-            DelBtn.IsEnabled = true;
+        { 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -115,15 +95,20 @@ namespace ProjektSemestralny
 
         private void searchBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
-            DataView dataView = new DataView(dt);
-            dataView.RowFilter = string.Format("imie LIKE '%{0}%'", searchBox.Text);
-            gridTable.ItemsSource = dataView;
+           
            
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void search_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            DataView dataView = new DataView(dt);
+            dataView.RowFilter = string.Format("imie LIKE '%{0}%'", searchBox.Text);
+            gridTable.ItemsSource = dataView;
         }
     }
 }

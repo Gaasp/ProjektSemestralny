@@ -23,6 +23,7 @@ namespace ProjektSemestralny
         public reservationWindow()
         {
             InitializeComponent();
+            search_TextBox.IsEnabled = false;
         }
         DataTable dt = new DataTable("Rezerwacje");
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -44,7 +45,7 @@ namespace ProjektSemestralny
                 string query = "SELECT id_rezerwacji,id_klienta,data_rezerwacji,id_pokoju FROM Rezerwacje";
                 SqlCommand createCommand = new SqlCommand(query, connection);
                 createCommand.ExecuteNonQuery();
-
+                search_TextBox.IsEnabled = true;
                 using (SqlDataAdapter dataApp = new SqlDataAdapter("SELECT * FROM Rezerwacje", connection))
                 {
 
